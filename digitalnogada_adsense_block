@@ -1,0 +1,17 @@
+// 클릭 횟수를 로컬 스토리지에서 가져오기
+let clickCount = parseInt(localStorage.getItem('adClickCount')) || 0;
+
+// 클릭 횟수 증가
+clickCount++;
+
+// 클릭 횟수를 로컬 스토리지에 저장
+localStorage.setItem('adClickCount', clickCount);
+
+// 클릭 횟수가 5회 이상인 경우
+if (clickCount >= 5) {
+    // 사용자를 차단하거나 다른 조치를 취할 수 있음
+    alert('애드센스 광고 클릭이 5회 이상 감지되었습니다. 차단됩니다.');
+    
+    // 로그를 콘솔에 기록
+    console.log('사용자 차단: 애드센스 광고 클릭이 5회 이상 감지됨');
+}
